@@ -1,5 +1,14 @@
-import { Text } from "react-native";
-
+import { Text, View } from "react-native";
+import { useNavigation } from "expo-router";
+import { useEffect } from "react";
 export default function Page() {
-  return <Text>Top-level page</Text>;
+  const navigation = useNavigation();
+  useEffect(() => {
+    navigation.setOptions({ headerShown: false });
+  }, [navigation]);
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Text>Home Screen</Text>
+    </View>
+  );
 }
